@@ -1,0 +1,24 @@
+name: open_data_logement
+version: "0.1.0"
+config-version: 2
+profile: open_data_logement
+
+model-paths: ["models"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  open_data_logement:
+    staging:
+      +schema: staging
+      +materialized: view
+    intermediate:
+      +schema: intermediate
+      +materialized: table
+    marts:
+      +schema: marts
+      +materialized: table
+
+flags:
+  send_anonymous_usage_stats: false

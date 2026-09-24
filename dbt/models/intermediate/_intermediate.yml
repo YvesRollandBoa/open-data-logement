@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: int_ventes_logement
+    description: >
+      Ventes d'un logement unique (maison ou appartement), une ligne par mutation,
+      avec prix au m² et indicateur de plausibilité.
+    columns:
+      - name: id_mutation
+        tests: [unique, not_null]
+      - name: type_local
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["Maison", "Appartement"]
+      - name: surface_reelle_bati
+        tests: [not_null]

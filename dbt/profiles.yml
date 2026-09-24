@@ -1,0 +1,8 @@
+open_data_logement:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # Chemin relatif au dossier dbt/ (lancer dbt depuis ce dossier)
+      path: ../data/warehouse.duckdb
+      threads: 4

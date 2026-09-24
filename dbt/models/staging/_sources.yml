@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    description: Données brutes chargées par ingestion/load_raw.py (toutes colonnes en texte).
+    tables:
+      - name: dvf_mutations
+        description: >
+          DVF géolocalisé (geo-dvf, Etalab / DGFiP). Une ligne par disposition × local × parcelle :
+          une même mutation (vente) peut donc apparaître sur plusieurs lignes, avec la valeur
+          foncière répétée sur chacune.
+        loaded_at_field: _loaded_at
+        columns:
+          - name: id_mutation
+            tests: [not_null]

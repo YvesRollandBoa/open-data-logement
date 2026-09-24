@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: mart_prix_commune_annee
+    description: Prix au m² médian et volumes de ventes par commune × année × type de logement.
+    columns:
+      - name: cle
+        description: Clé technique commune-année-type.
+        tests: [unique, not_null]
+      - name: code_commune
+        tests: [not_null]
+      - name: nb_ventes
+        tests: [not_null]
+      - name: prix_m2_median
+        tests: [not_null]

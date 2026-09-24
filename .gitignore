@@ -1,0 +1,19 @@
+# Données (téléchargées ou générées, jamais versionnées)
+data/
+*.duckdb
+*.duckdb.wal
+*.part
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/.user.yml
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

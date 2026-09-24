@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_dvf_mutations
+    description: DVF typé et renommé, grain identique à la source.
+    columns:
+      - name: id_mutation
+        tests: [not_null]
+      - name: date_mutation
+        tests: [not_null]
+      - name: code_commune
+        tests: [not_null]
