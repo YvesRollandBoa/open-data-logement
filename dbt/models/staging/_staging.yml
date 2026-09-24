@@ -10,3 +10,29 @@ models:
         tests: [not_null]
       - name: code_commune
         tests: [not_null]
+
+  - name: stg_dpe_logements
+    description: DPE typés et renommés, un DPE par ligne.
+    columns:
+      - name: numero_dpe
+        tests: [unique, not_null]
+      - name: code_commune
+        tests: [not_null]
+      - name: etiquette_dpe
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["A", "B", "C", "D", "E", "F", "G"]
+      - name: type_batiment
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["maison", "appartement", "immeuble"]
+
+  - name: stg_insee_indicateurs
+    description: Indicateurs communaux INSEE (format long), secret statistique mis à NULL.
+    columns:
+      - name: code_commune
+        tests: [not_null]
+      - name: indicateur
+        tests: [not_null]

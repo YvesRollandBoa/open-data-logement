@@ -15,3 +15,39 @@ models:
                 values: ["Maison", "Appartement"]
       - name: surface_reelle_bati
         tests: [not_null]
+      - name: code_commune
+        tests:
+          # Les codes DVF doivent exister dans le référentiel INSEE (géographie 2026).
+          # Alerte seulement : une fusion de communes récente peut laisser un ancien code.
+          - relationships:
+              arguments:
+                to: ref('int_insee_commune')
+                field: code_commune
+              config:
+                severity: warn
+
+  - name: int_dpe_logement_dernier
+    description: Un logement (maison ou appartement) = son DPE le plus récent.
+    columns:
+      - name: cle_logement
+        tests: [unique, not_null]
+      - name: code_commune
+        tests:
+          - relationships:
+              arguments:
+                to: ref('int_insee_commune')
+                field: code_commune
+              config:
+                severity: warn
+
+  - name: int_insee_commune
+    description: Indicateurs INSEE pivotés, une ligne par commune.
+    columns:
+      - name: code_commune
+        tests: [unique, not_null]
+      - name: population
+        tests:
+          # Mayotte (976) n'a pas de population 2023 dans l'édition 2026 : hors périmètre DVF de toute façon.
+          - not_null:
+              config:
+                where: "code_commune not like '976%'"

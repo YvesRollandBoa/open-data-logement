@@ -1,0 +1,12 @@
+version: 2
+
+seeds:
+  - name: departements
+    description: Référentiel des départements du périmètre (à compléter pour étendre au national).
+    config:
+      column_types:
+        code_departement: varchar
+        code_region: varchar
+    columns:
+      - name: code_departement
+        tests: [unique, not_null]

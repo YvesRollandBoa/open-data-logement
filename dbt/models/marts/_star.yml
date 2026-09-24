@@ -1,0 +1,63 @@
+version: 2
+
+# Schéma en étoile exporté vers Power BI.
+models:
+  - name: dim_date
+    description: Une ligne par jour depuis 2021, libellés en français. Table de dates Power BI.
+    columns:
+      - name: date
+        tests: [unique, not_null]
+
+  - name: dim_commune
+    description: >
+      Une ligne par commune du périmètre : attributs INSEE (2023), département, coordonnées
+      (médiane des ventes DVF géolocalisées). Inclut les communes fusionnées encore présentes
+      dans les faits (`est_commune_historique`).
+    columns:
+      - name: code_commune
+        tests: [unique, not_null]
+      - name: nom_departement
+        tests: [not_null]
+
+  - name: fct_ventes
+    description: Une ligne par vente d'un logement (prix plausible). Médianes à calculer en DAX (MEDIANX).
+    columns:
+      - name: id_mutation
+        tests: [unique, not_null]
+      - name: date_vente
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date
+      - name: code_commune
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_commune')
+                field: code_commune
+
+  - name: fct_dpe_mensuel
+    description: DPE réalisés par commune × mois × type × période de construction × étiquette (flux, additif).
+    tests:
+      - unique_combinaison:
+          arguments:
+            colonnes: [mois, code_commune, type_logement, periode_construction, etiquette_dpe]
+    columns:
+      - name: mois
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date
+      - name: code_commune
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_commune')
+                field: code_commune
+      - name: nb_dpe
+        tests: [not_null]

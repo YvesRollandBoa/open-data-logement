@@ -5,6 +5,7 @@ profile: open_data_logement
 
 model-paths: ["models"]
 test-paths: ["tests"]
+seed-paths: ["seeds"]
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
 
@@ -19,6 +20,16 @@ models:
     marts:
       +schema: marts
       +materialized: table
+
+seeds:
+  open_data_logement:
+    +schema: referentiel
+
+vars:
+  # Périmètre géographique (doit correspondre à DEPARTEMENTS dans ingestion/config.py)
+  departements: ["02", "59", "60", "62", "80"]
+  # Années DVF regroupées pour les indicateurs « récents » (2 ans = assez de ventes par commune)
+  annees_recentes: [2024, 2025]
 
 flags:
   send_anonymous_usage_stats: false

@@ -1,0 +1,113 @@
+// =====================================================================
+//  Mesures DAX — dashboard Open Data Logement
+//  À créer dans une table de mesures vide nommée « _Mesures »
+//  (Accueil → Entrer des données → table vide → renommer « _Mesures »).
+//  Pré-requis : dim_date marquée comme table de dates (colonne `date`).
+// =====================================================================
+
+
+// ---------------------------------------------------------------------
+//  MARCHÉ IMMOBILIER (fct_ventes)
+// ---------------------------------------------------------------------
+
+Nb ventes =
+COUNTROWS ( fct_ventes )
+
+// La médiane est recalculée sur les ventes filtrées : juste à tout niveau
+// (commune, département, année, mois, type de logement…)
+Prix m² médian =
+MEDIAN ( fct_ventes[prix_m2] )
+
+Prix médian =
+MEDIAN ( fct_ventes[prix] )
+
+Surface médiane =
+MEDIAN ( fct_ventes[surface_m2] )
+
+
+// --- Comparaison à l'année précédente --------------------------------
+
+Nb ventes N-1 =
+CALCULATE ( [Nb ventes], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+
+Évol. ventes vs N-1 =
+DIVIDE ( [Nb ventes] - [Nb ventes N-1], [Nb ventes N-1] )
+
+Prix m² médian N-1 =
+CALCULATE ( [Prix m² médian], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+
+Évol. prix m² vs N-1 =
+DIVIDE ( [Prix m² médian] - [Prix m² médian N-1], [Prix m² médian N-1] )
+
+
+// --- Tendances --------------------------------------------------------
+
+// Lisse la saisonnalité (pics de ventes en été)
+Nb ventes 12 mois glissants =
+CALCULATE (
+    [Nb ventes],
+    DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH )
+)
+
+Prix m² médian 12 mois glissants =
+CALCULATE (
+    [Prix m² médian],
+    DATESINPERIOD ( dim_date[date], MAX ( dim_date[date] ), -12, MONTH )
+)
+
+Nb ventes cumul annuel =
+TOTALYTD ( [Nb ventes], dim_date[date] )
+
+
+// ---------------------------------------------------------------------
+//  PERFORMANCE ÉNERGÉTIQUE (fct_dpe_mensuel)
+// ---------------------------------------------------------------------
+
+Nb DPE =
+SUM ( fct_dpe_mensuel[nb_dpe] )
+
+Nb passoires thermiques =
+CALCULATE ( [Nb DPE], fct_dpe_mensuel[est_passoire_thermique] = TRUE () )
+
+// Additif : juste quel que soit le filtre
+Part passoires thermiques =
+DIVIDE ( [Nb passoires thermiques], [Nb DPE] )
+
+Part passoires N-1 =
+CALCULATE ( [Part passoires thermiques], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+
+// En points de pourcentage (ex. -0,05 = -5 points)
+Écart passoires vs N-1 (pts) =
+[Part passoires thermiques] - [Part passoires N-1]
+
+Part logements A-B =
+DIVIDE (
+    CALCULATE ( [Nb DPE], fct_dpe_mensuel[etiquette_dpe] IN { "A", "B" } ),
+    [Nb DPE]
+)
+
+
+// ---------------------------------------------------------------------
+//  ACCESSIBILITÉ (croisement ventes × revenus)
+// ---------------------------------------------------------------------
+
+// Niveau de vie médian de la commune sélectionnée (vide si plusieurs communes :
+// une médiane de médianes n'a pas de sens)
+Niveau de vie médian =
+SELECTEDVALUE ( dim_commune[niveau_vie_median] )
+
+// Nombre d'années de niveau de vie médian pour acheter le logement médian
+Années de niveau de vie pour acheter =
+DIVIDE ( [Prix médian], [Niveau de vie médian] )
+
+
+// ---------------------------------------------------------------------
+//  AFFICHAGE
+// ---------------------------------------------------------------------
+
+// Titre dynamique : « Période : 2021 – 2025 »
+Titre période =
+"Période : " & YEAR ( MIN ( fct_ventes[date_vente] ) ) & " – " & YEAR ( MAX ( fct_ventes[date_vente] ) )
+
+Dernière vente connue =
+FORMAT ( MAX ( fct_ventes[date_vente] ), "d mmmm yyyy" )

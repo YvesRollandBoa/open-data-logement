@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: raw
-    description: Données brutes chargées par ingestion/load_raw.py (toutes colonnes en texte).
+    description: Données brutes chargées par ingestion/load_raw.py (sans transformation).
     tables:
       - name: dvf_mutations
         description: >
@@ -13,3 +13,25 @@ sources:
         columns:
           - name: id_mutation
             tests: [not_null]
+
+      - name: dpe_logements
+        description: >
+          DPE des logements existants (ADEME, depuis juillet 2021), toutes colonnes en texte.
+          Un même logement peut avoir plusieurs DPE (nouveau diagnostic, correction).
+        loaded_at_field: _loaded_at
+        columns:
+          - name: numero_dpe
+            tests:
+              - not_null
+              # Doublons techniques possibles si l'ADEME met à jour pendant la pagination
+              # de l'API : simple alerte, ils sont retirés en staging.
+              - unique:
+                  config:
+                    severity: warn
+
+      - name: insee_comparateur
+        description: >
+          Base du comparateur de territoires INSEE (géographie au 1er janvier 2026), format long :
+          une ligne par territoire × indicateur (TAB_MEASURE) × période (TIME_PERIOD).
+          CONF_STATUS = 'C' signale une valeur couverte par le secret statistique.
+        loaded_at_field: _loaded_at

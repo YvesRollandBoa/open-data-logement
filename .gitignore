@@ -10,6 +10,9 @@ dbt/logs/
 dbt/dbt_packages/
 dbt/.user.yml
 
+# Secrets
+.env
+
 # Python
 .venv/
 __pycache__/

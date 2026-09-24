@@ -13,3 +13,28 @@ models:
         tests: [not_null]
       - name: prix_m2_median
         tests: [not_null]
+
+  - name: mart_logement_commune
+    description: >
+      Une ligne par commune du périmètre : population, niveau de vie, parc de logements (INSEE),
+      prix récents (DVF), performance énergétique (DPE) et indicateur d'accessibilité.
+    columns:
+      - name: code_commune
+        tests: [unique, not_null]
+      - name: population
+        tests: [not_null]
+      - name: annees_niveau_vie_pour_acheter
+        description: Prix médian d'un logement / niveau de vie médian annuel de la commune.
+      - name: part_passoires_thermiques
+        description: Part des logements diagnostiqués classés F ou G.
+
+  - name: mart_dpe_commune_etiquette
+    description: Nombre de logements par commune × type × période de construction × étiquette DPE.
+    columns:
+      - name: cle
+        tests: [unique, not_null]
+      - name: etiquette_dpe
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["A", "B", "C", "D", "E", "F", "G"]
