@@ -176,6 +176,116 @@ table _Mesures
 		displayFolder: 9. Mise en forme
 		lineageTag: ec044a93-ce33-42ba-8bfd-a836bbb48399
 
+	measure 'Prix m² médian (carte)' =
+			
+			IF (
+			    NOT ISBLANK ( [Prix m² médian] ),
+			    FORMAT ( [Prix m² médian], "#,0 €" )
+			)
+		displayFolder: 9. Mise en forme\Cartes
+		lineageTag: e4941527-5c1e-446b-bb66-53dab3cb1e94
+
+	measure 'Nb ventes (carte)' =
+			
+			IF ( NOT ISBLANK ( [Nb ventes] ), FORMAT ( [Nb ventes], "#,0" ) )
+		displayFolder: 9. Mise en forme\Cartes
+		lineageTag: f16557cc-0852-460f-bb09-8cac52a0eef5
+
+	measure 'Prix médian (carte)' =
+			
+			IF ( NOT ISBLANK ( [Prix médian] ), FORMAT ( [Prix médian], "#,0 €" ) )
+		displayFolder: 9. Mise en forme\Cartes
+		lineageTag: 62e24678-59e0-4a03-96b8-3538c7cd86be
+
+	measure 'Évol. prix médian vs N-1' =
+			
+			IF (
+			    HASONEVALUE ( 'open_data_logement dim_date'[annee] ),
+			    DIVIDE ( [Prix médian] - [Prix médian N-1], [Prix médian N-1] )
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: 12ef85b2-93ce-4e01-bb2c-e8880de6597c
+
+	measure 'Prix médian N-1' =
+			
+			IF (
+			    NOT ISBLANK ( [Prix médian] ),
+			    CALCULATE ( [Prix médian], SAMEPERIODLASTYEAR ( 'open_data_logement dim_date'[date] ) )
+			)
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: bd170b9d-0dfd-48b7-8e7e-e426f23da4d5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Libellé évol. prix médian' =
+			
+			VAR e = [Évol. prix médian vs N-1]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( e ),
+			        IF ( e >= 0, "▲ ", "▼ " ) & FORMAT ( e, "+0.0 %;-0.0 %" ) & " vs "
+			            & ( MAX ( 'open_data_logement dim_date'[annee] ) - 1 )
+			    )
+		displayFolder: 9. Mise en forme
+		lineageTag: 1b977da2-781b-4329-a43e-288dbfc28169
+
+	measure 'Couleur évol. prix médian' =
+			
+			IF ( [Évol. prix médian vs N-1] >= 0, "#1D7A3A", "#B3261E" )
+		displayFolder: 9. Mise en forme
+		lineageTag: 4cfdcd58-e8a4-45af-a4ce-cbe2fd9505c1
+
+	measure 'Titre carte prix m²' =
+			
+			"Prix médian au m² · "
+			    & SELECTEDVALUE ( 'open_data_logement dim_date'[annee], "2021-2025" )
+		displayFolder: 9. Mise en forme\Titres
+		lineageTag: b6de26d0-2418-4b5e-9ce0-c1d2563c8e90
+
+	measure 'Titre carte ventes' =
+			
+			"Ventes de logements · "
+			    & SELECTEDVALUE ( 'open_data_logement dim_date'[annee], "2021-2025" )
+		displayFolder: 9. Mise en forme\Titres
+		lineageTag: 22cf49a4-cd6e-4187-878e-473b0cc1320a
+
+	measure 'Titre carte prix médian' =
+			
+			"Prix médian d'un logement · "
+			    & SELECTEDVALUE ( 'open_data_logement dim_date'[annee], "2021-2025" )
+		displayFolder: 9. Mise en forme\Titres
+		lineageTag: 466c585a-6538-45c0-b2e2-bcb94cc426eb
+
+	measure 'Titre carte passoires' =
+			
+			"Passoires (F-G) parmi les DPE · "
+			    & SELECTEDVALUE ( 'open_data_logement dim_date'[annee], "2021-2025" )
+		displayFolder: 9. Mise en forme\Titres
+		lineageTag: b928a249-3d28-4a33-b126-08c9673bed2d
+
+	measure 'Titre ventes par mois' =
+			
+			"Ventes par mois · "
+			    & SELECTEDVALUE ( 'open_data_logement dim_date'[annee], "2021-2025" )
+		displayFolder: 9. Mise en forme\Titres
+		lineageTag: d7e9b40c-2091-4642-bdc9-4b403c4fc1e3
+
+	measure 'Sous-titre ventes par mois' =
+			
+			VAR n =
+			    SUBSTITUTE ( FORMAT ( [Nb ventes], "#,0" ), ",", " " )
+			VAR a =
+			    SELECTEDVALUE ( 'open_data_logement dim_date'[annee] )
+			RETURN
+			    n & " ventes"
+			        & IF (
+			            NOT ISBLANK ( a ),
+			            " · le trait bleu foncé indique le même mois en " & ( a - 1 )
+			        )
+		displayFolder: 9. Mise en forme\Titres
+		lineageTag: dcf36c62-831e-4b62-9d69-00459a49ea95
+
 	partition _Mesures = m
 		mode: import
 		source =
