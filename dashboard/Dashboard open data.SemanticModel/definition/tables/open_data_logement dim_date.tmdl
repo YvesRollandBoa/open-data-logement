@@ -1,0 +1,161 @@
+table 'open_data_logement dim_date'
+	lineageTag: bc846fa3-7bbe-4fb9-90b1-3d97b010e0a9
+	dataCategory: Time
+
+	column date
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: f902ae46-64e5-4759-908a-4c94b4621572
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column annee
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a912326-c043-4bf4-a48e-589276a0b758
+		summarizeBy: none
+		sourceColumn: annee
+
+		annotation SummarizationSetBy = User
+
+	column semestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 502e0b5f-9186-4282-9d19-6fd5e9e89cdc
+		summarizeBy: sum
+		sourceColumn: semestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee_semestre
+		dataType: string
+		lineageTag: dc6d0b1d-c70e-45b6-a697-dee691c24996
+		summarizeBy: none
+		sourceColumn: annee_semestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column trimestre
+		dataType: int64
+		formatString: 0
+		lineageTag: 18d57f9d-c263-4e6b-81df-1651e1a1e526
+		summarizeBy: sum
+		sourceColumn: trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee_trimestre
+		dataType: string
+		lineageTag: b360a96e-469b-41d9-b5d1-73c4a4e0d45e
+		summarizeBy: none
+		sourceColumn: annee_trimestre
+
+		annotation SummarizationSetBy = Automatic
+
+	column mois
+		dataType: int64
+		formatString: 0
+		lineageTag: f1dce3cd-e3bd-4f81-b014-37ca406248cc
+		summarizeBy: sum
+		sourceColumn: mois
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_mois
+		dataType: string
+		lineageTag: 70f42023-c505-4806-9d98-c0d5d92cc197
+		summarizeBy: none
+		sourceColumn: nom_mois
+		sortByColumn: mois
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_mois_court
+		dataType: string
+		lineageTag: 5878c211-13a0-4387-ad6f-a461d96604d6
+		summarizeBy: none
+		sourceColumn: nom_mois_court
+		sortByColumn: mois
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee_mois
+		dataType: string
+		lineageTag: af50a64e-3b48-4fd9-aee9-f7a952befe81
+		summarizeBy: none
+		sourceColumn: annee_mois
+		sortByColumn: annee_mois_tri
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column annee_mois_tri
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b6411a2e-2377-4bc1-81a9-19b8ce62f05b
+		summarizeBy: sum
+		sourceColumn: annee_mois_tri
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column premier_jour_mois
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 2c9fbb5b-921b-49bd-b524-347ae51c275d
+		summarizeBy: none
+		sourceColumn: premier_jour_mois
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column jour_semaine
+		dataType: int64
+		formatString: 0
+		lineageTag: 3c3fe6f2-a282-44bf-b38c-05b9f47e2786
+		summarizeBy: sum
+		sourceColumn: jour_semaine
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_jour
+		dataType: string
+		lineageTag: 58b5f1ec-83fb-4882-9b7b-fa68562b91f8
+		summarizeBy: none
+		sourceColumn: nom_jour
+
+		annotation SummarizationSetBy = Automatic
+
+	column est_weekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ac014fc2-4ef5-4717-9b58-01c6d9ce853e
+		summarizeBy: none
+		sourceColumn: est_weekend
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'open_data_logement dim_date' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-spring-fire-am8oqesr-pooler.c-5.us-east-1.aws.neon.tech", "neondb"),
+				    open_data_logement_dim_date = Source{[Schema="open_data_logement",Item="dim_date"]}[Data]
+				in
+				    open_data_logement_dim_date
+
+	annotation PBI_ResultType = Table
+

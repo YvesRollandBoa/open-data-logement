@@ -1,0 +1,82 @@
+table 'open_data_logement mart_dpe_commune_etiquette'
+	lineageTag: e9399c89-b99a-459a-baa1-a334b725ef73
+
+	column cle
+		dataType: string
+		lineageTag: 10ef55d4-e55e-4157-857f-c6c498c04892
+		summarizeBy: none
+		sourceColumn: cle
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_commune
+		dataType: string
+		isHidden
+		lineageTag: c254c7ab-ef22-4242-9a49-ef7fe2b602e0
+		summarizeBy: none
+		sourceColumn: code_commune
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_commune
+		dataType: string
+		lineageTag: 7ea1021b-7ca9-4681-99fb-b5210222c785
+		summarizeBy: none
+		sourceColumn: nom_commune
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_departement
+		dataType: string
+		lineageTag: b954349d-8758-4a5a-bafc-cc386a349b59
+		summarizeBy: none
+		sourceColumn: code_departement
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_batiment
+		dataType: string
+		lineageTag: 11299775-7412-4574-b239-08ebf5a8b0ce
+		summarizeBy: none
+		sourceColumn: type_batiment
+
+		annotation SummarizationSetBy = Automatic
+
+	column periode_construction
+		dataType: string
+		lineageTag: 8b0064e0-c735-41e2-897f-4a6b5e9668f7
+		summarizeBy: none
+		sourceColumn: periode_construction
+
+		annotation SummarizationSetBy = Automatic
+
+	column etiquette_dpe
+		dataType: string
+		lineageTag: 82ab4e9f-d94e-4f76-be8e-aa126548eeed
+		summarizeBy: none
+		sourceColumn: etiquette_dpe
+
+		annotation SummarizationSetBy = Automatic
+
+	column nb_logements
+		dataType: int64
+		formatString: 0
+		lineageTag: 75f21139-914d-476c-9e20-a8c73cfeb0f1
+		summarizeBy: sum
+		sourceColumn: nb_logements
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'open_data_logement mart_dpe_commune_etiquette' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-spring-fire-am8oqesr-pooler.c-5.us-east-1.aws.neon.tech", "neondb"),
+				    open_data_logement_mart_dpe_commune_etiquette = Source{[Schema="open_data_logement",Item="mart_dpe_commune_etiquette"]}[Data]
+				in
+				    open_data_logement_mart_dpe_commune_etiquette
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,205 @@
+table 'open_data_logement dim_commune'
+	lineageTag: d6256a8c-5689-4a2d-8cbb-ffdd4bce7614
+
+	column code_commune
+		dataType: string
+		lineageTag: 05b78827-fb18-42f8-8808-7c7e466d7e11
+		summarizeBy: none
+		sourceColumn: code_commune
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_commune
+		dataType: string
+		lineageTag: acc7ccb3-f4a3-4d4e-98ae-920569355f2f
+		summarizeBy: none
+		sourceColumn: nom_commune
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_commune_dep
+		dataType: string
+		lineageTag: 21fd8528-b8f6-4c8d-b4ce-15c6925c45b5
+		summarizeBy: none
+		sourceColumn: nom_commune_dep
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_departement
+		dataType: string
+		lineageTag: 79835147-dbc3-4f96-876a-9264482c1ab2
+		summarizeBy: none
+		sourceColumn: code_departement
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_departement
+		dataType: string
+		lineageTag: 2e883f19-5a03-43ed-9ba7-faa53369cf5e
+		summarizeBy: none
+		sourceColumn: nom_departement
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_region
+		dataType: string
+		lineageTag: 0f5212fd-9989-4016-a18e-ca784e09d1fe
+		summarizeBy: none
+		sourceColumn: nom_region
+
+		annotation SummarizationSetBy = Automatic
+
+	column est_commune_historique
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 75059cc4-d206-4427-9f6b-c8821f33e3d5
+		summarizeBy: none
+		sourceColumn: est_commune_historique
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 8dba7be6-f9f1-4108-b36f-e69604076fcf
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: adc478d4-ef6a-4abc-a0a2-74685033666c
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column population
+		dataType: double
+		lineageTag: ec98c4bb-5bee-405b-a203-8efa41a1e02b
+		summarizeBy: sum
+		sourceColumn: population
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column superficie_km2
+		dataType: double
+		lineageTag: 86ea01f5-38ad-4a25-af9a-cf81e13172a8
+		summarizeBy: sum
+		sourceColumn: superficie_km2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column densite_hab_km2
+		dataType: double
+		lineageTag: 155beaf0-cf8d-43d5-a31f-86d1c5d084c5
+		summarizeBy: sum
+		sourceColumn: densite_hab_km2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column taille_commune
+		dataType: string
+		lineageTag: c1068add-8319-4a93-b0f9-f650ade6d483
+		summarizeBy: none
+		sourceColumn: taille_commune
+
+		annotation SummarizationSetBy = Automatic
+
+	column niveau_vie_median
+		dataType: double
+		lineageTag: d87ea7d9-bbab-45b9-a5ec-95e5c6310969
+		summarizeBy: sum
+		sourceColumn: niveau_vie_median
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column niveau_vie_sous_secret
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a3c59563-5a58-4cd3-a6f8-0b60b2d685c1
+		summarizeBy: none
+		sourceColumn: niveau_vie_sous_secret
+
+		annotation SummarizationSetBy = Automatic
+
+	column taux_pauvrete
+		dataType: double
+		lineageTag: 1268afae-2ee2-476a-9c60-a8389c563244
+		summarizeBy: sum
+		sourceColumn: taux_pauvrete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nb_logements
+		dataType: int64
+		formatString: 0
+		lineageTag: f980dc4a-370c-4c18-a7af-a7bd043de85b
+		summarizeBy: sum
+		sourceColumn: nb_logements
+
+		annotation SummarizationSetBy = Automatic
+
+	column nb_residences_principales
+		dataType: int64
+		formatString: 0
+		lineageTag: e2f803ac-ccde-4d2f-8497-45d8d5c377dc
+		summarizeBy: sum
+		sourceColumn: nb_residences_principales
+
+		annotation SummarizationSetBy = Automatic
+
+	column nb_logements_vacants
+		dataType: int64
+		formatString: 0
+		lineageTag: 10c376b2-481c-4674-87e0-a0f6f39644ef
+		summarizeBy: sum
+		sourceColumn: nb_logements_vacants
+
+		annotation SummarizationSetBy = Automatic
+
+	column nb_residences_secondaires
+		dataType: int64
+		formatString: 0
+		lineageTag: 919894a5-d2e6-4cd9-878a-72512ab1899b
+		summarizeBy: sum
+		sourceColumn: nb_residences_secondaires
+
+		annotation SummarizationSetBy = Automatic
+
+	column nb_proprietaires
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b0a5ae3-8562-4b80-9f79-a49b9c999c8b
+		summarizeBy: sum
+		sourceColumn: nb_proprietaires
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'open_data_logement dim_commune' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-spring-fire-am8oqesr-pooler.c-5.us-east-1.aws.neon.tech", "neondb"),
+				    open_data_logement_dim_commune = Source{[Schema="open_data_logement",Item="dim_commune"]}[Data]
+				in
+				    open_data_logement_dim_commune
+
+	annotation PBI_ResultType = Table
+

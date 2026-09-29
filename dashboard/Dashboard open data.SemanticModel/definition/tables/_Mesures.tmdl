@@ -1,0 +1,190 @@
+table _Mesures
+	lineageTag: f5d8264f-b5f4-47d2-aa2c-9cd3b1878577
+
+	measure 'Nb ventes' = COUNTROWS ( 'open_data_logement fct_ventes')
+		formatString: #,0
+		displayFolder: 1. Marché
+		lineageTag: cb7dc11f-5fb3-411e-97ff-b06c16f09533
+
+	measure 'Prix m² médian' = MEDIAN ( 'open_data_logement fct_ventes'[prix_m2])
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		displayFolder: 1. Marché
+		lineageTag: 35915723-f337-4f6e-b811-9ab1819724a9
+
+	measure 'Prix médian' = MEDIAN ( 'open_data_logement fct_ventes'[prix] )
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		displayFolder: 1. Marché
+		lineageTag: 985d7a99-b898-44dc-9a9d-09d378a6a953
+
+	measure 'Nb ventes N-1' =
+			
+			IF (
+			    NOT ISBLANK ( [Nb ventes] ),
+			    CALCULATE ( [Nb ventes], SAMEPERIODLASTYEAR ( 'open_data_logement dim_date'[date] ) )
+			)
+		formatString: #,0
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: a92bcbc8-85e3-4c5b-a637-5ccd6af42122
+
+	measure 'Évol. ventes vs N-1' =
+			
+			IF (
+			    HASONEVALUE ( 'open_data_logement dim_date'[annee] ),
+			    DIVIDE ( [Nb ventes] - [Nb ventes N-1], [Nb ventes N-1] )
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: bcbc4da3-1873-44e5-a74f-e51fd50db0c4
+
+	measure 'Prix m² médian N-1' =
+			
+			IF (
+			    NOT ISBLANK ( [Prix m² médian] ),
+			    CALCULATE ( [Prix m² médian], SAMEPERIODLASTYEAR ( 'open_data_logement dim_date'[date] ) )
+			)
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: f5396846-7ac5-4b38-9dcd-86e1bf158f19
+
+	measure 'Évol. prix m² vs N-1' =
+			
+			IF (
+			    HASONEVALUE ( 'open_data_logement dim_date'[annee] ),
+			    DIVIDE ( [Prix m² médian] - [Prix m² médian N-1], [Prix m² médian N-1] )
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: d1df5de7-b2c0-4609-ad4c-4d62e1e8ecf9
+
+	measure 'Nb DPE' =
+			
+			SUM ( 'open_data_logement fct_dpe_mensuel'[nb_dpe] )
+		formatString: #,0
+		displayFolder: 2. Énergie
+		lineageTag: ebf2db14-0bed-4a68-b7a3-06817f9b7a1a
+
+	measure 'Nb passoires thermiques' =
+			
+			CALCULATE ( [Nb DPE], 'open_data_logement fct_dpe_mensuel'[est_passoire_thermique] = TRUE () )
+		formatString: #,0
+		displayFolder: 2. Énergie
+		lineageTag: 6c9c5640-67c5-498b-9247-65c37e242e0b
+
+	measure 'Part passoires thermiques' =
+			
+			DIVIDE ( [Nb passoires thermiques], [Nb DPE] )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 2. Énergie
+		lineageTag: 30f73baf-b716-48cc-af52-2534a59a69d7
+
+	measure 'Part passoires N-1' =
+			
+			IF (
+			    NOT ISBLANK ( [Part passoires thermiques] ),
+			    CALCULATE ( [Part passoires thermiques], SAMEPERIODLASTYEAR ( 'open_data_logement dim_date'[date] ) )
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 2. Énergie\Comparaison N-1
+		lineageTag: 169759f2-3423-4309-bc60-1a66755d18fa
+
+	measure 'Écart passoires vs N-1 (pts)' =
+			
+			IF (
+			    HASONEVALUE ( 'open_data_logement dim_date'[annee] )
+			        && NOT ISBLANK ( [Part passoires N-1] ),
+			    [Part passoires thermiques] - [Part passoires N-1]
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 2. Énergie\Comparaison N-1
+		lineageTag: 93a78f27-436c-48ba-b58c-6f998d5b079c
+
+	measure 'Nb ventes 12 mois glissants' =
+			
+			CALCULATE (
+			    [Nb ventes],
+			    DATESINPERIOD ( 'open_data_logement dim_date'[date], MAX ( 'open_data_logement dim_date'[date] ), -12, MONTH )
+			)
+		formatString: #,0
+		displayFolder: 1. Marché\Tendances
+		lineageTag: 8d6e1b46-3511-4899-8657-5abca465bb1a
+
+	measure 'Prix m² médian 12 mois glissants' =
+			
+			CALCULATE (
+			    [Prix m² médian],
+			    DATESINPERIOD ( 'open_data_logement dim_date'[date], MAX ( 'open_data_logement dim_date'[date] ), -12, MONTH )
+			)
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		displayFolder: 1. Marché\Tendances
+		lineageTag: b57a97b7-c26e-4175-bd2f-4618ea0ea28c
+
+	measure 'Nb ventes cumul annuel' =
+			
+			TOTALYTD ( [Nb ventes], 'open_data_logement dim_date'[date] )
+		formatString: #,0
+		displayFolder: 1. Marché\Tendances
+		lineageTag: 01f06e12-3759-4f93-a0e1-40a9efe96295
+
+	measure 'Libellé évol. ventes' =
+			
+			VAR e = [Évol. ventes vs N-1]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( e ),
+			        IF ( e >= 0, "▲ ", "▼ " ) & FORMAT ( e, "+0.0 %;-0.0 %" ) & " vs " & ( MAX ( 'open_data_logement dim_date'[annee] ) - 1 )
+			    )
+		displayFolder: 9. Mise en forme
+		lineageTag: 34b68517-1cbf-49c0-8b64-2d6d9f82dc02
+
+	measure 'Libellé évol. prix m²' =
+			
+			VAR e = [Évol. prix m² vs N-1]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( e ),
+			        IF ( e >= 0, "▲ ", "▼ " ) & FORMAT ( e, "+0.0 %;-0.0 %" ) & " vs " & ( MAX ( 'open_data_logement dim_date'[annee] ) - 1 )
+			    )
+		displayFolder: 9. Mise en forme
+		lineageTag: 6ead9f67-688f-4a4c-943e-fb1f4e6d24b9
+
+	measure 'Libellé écart passoires' =
+			
+			VAR e = [Écart passoires vs N-1 (pts)]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( e ),
+			        IF ( e >= 0, "▲ ", "▼ " ) & FORMAT ( e * 100, "+0.0;-0.0" ) & " pts vs " & ( MAX ( 'open_data_logement dim_date'[annee] ) - 1 )
+			    )
+		displayFolder: 9. Mise en forme
+		lineageTag: 06879b45-45ab-4e95-abff-71a9b4cb111e
+
+	measure 'Couleur évol. ventes' =
+			
+			IF ( [Évol. ventes vs N-1] >= 0, "#1D7A3A", "#B3261E" )
+		displayFolder: 9. Mise en forme
+		lineageTag: 6ee092a3-5631-433b-a96a-a14c00cb74e6
+
+	measure 'Couleur évol. prix m²' =
+			
+			IF ( [Évol. prix m² vs N-1] >= 0, "#1D7A3A", "#B3261E" )
+		displayFolder: 9. Mise en forme
+		lineageTag: c23ea2e1-2cb0-4004-8181-202db03f4583
+
+	measure 'Couleur écart passoires' =
+			
+			IF ( [Écart passoires vs N-1 (pts)] <= 0, "#1D7A3A", "#B3261E" )
+		displayFolder: 9. Mise en forme
+		lineageTag: ec044a93-ce33-42ba-8bfd-a836bbb48399
+
+	partition _Mesures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"Colonne 1" = _t]),
+				    #"Type modifié" = Table.TransformColumnTypes(Source,{{"Colonne 1", type text}}),
+				    #"Colonnes supprimées" = Table.RemoveColumns(#"Type modifié",{"Colonne 1"})
+				in
+				    #"Colonnes supprimées"
+
+	annotation PBI_ResultType = Table
+

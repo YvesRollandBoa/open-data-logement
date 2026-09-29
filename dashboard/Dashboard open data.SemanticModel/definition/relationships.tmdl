@@ -1,0 +1,24 @@
+relationship AutoDetected_c912ec58-eb75-48c1-a9a9-50218a48cbe1
+	fromColumn: 'open_data_logement fct_ventes'.code_commune
+	toColumn: 'open_data_logement dim_commune'.code_commune
+
+relationship AutoDetected_c9466b41-6099-4715-b86f-b30810756d94
+	fromColumn: 'open_data_logement fct_dpe_mensuel'.code_commune
+	toColumn: 'open_data_logement dim_commune'.code_commune
+
+relationship AutoDetected_9de1fdf3-0703-43bd-9fd1-c602f7e917f2
+	fromColumn: 'open_data_logement mart_logement_commune'.code_commune
+	toColumn: 'open_data_logement dim_commune'.code_commune
+
+relationship AutoDetected_48b366f0-8012-40fb-a5b7-4ada756effa5
+	fromColumn: 'open_data_logement mart_dpe_commune_etiquette'.code_commune
+	toColumn: 'open_data_logement dim_commune'.code_commune
+
+relationship 3774798b-b93a-e3aa-449d-fd6588fe2c64
+	fromColumn: 'open_data_logement fct_ventes'.date_vente
+	toColumn: 'open_data_logement dim_date'.date
+
+relationship 81071c8d-acc1-5688-fcde-9c11e93cfb12
+	fromColumn: 'open_data_logement fct_dpe_mensuel'.mois
+	toColumn: 'open_data_logement dim_date'.date
+

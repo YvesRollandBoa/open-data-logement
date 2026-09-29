@@ -1,0 +1,114 @@
+table 'open_data_logement fct_ventes'
+	lineageTag: 7895c11f-aab6-4fb7-8bec-9429aaa40d17
+
+	column id_mutation
+		dataType: string
+		lineageTag: 86a5aad2-3f34-4ebe-b5be-f49a6e423e42
+		summarizeBy: none
+		sourceColumn: id_mutation
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_vente
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: d4822321-b520-4335-83dc-e0fdb502b054
+		summarizeBy: none
+		sourceColumn: date_vente
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column code_commune
+		dataType: string
+		isHidden
+		lineageTag: a1ad52f9-ff80-40ee-9ed8-d7cf44761306
+		summarizeBy: none
+		sourceColumn: code_commune
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_logement
+		dataType: string
+		lineageTag: 10069643-d579-490f-bab1-f9ffd4113245
+		summarizeBy: none
+		sourceColumn: type_logement
+
+		annotation SummarizationSetBy = Automatic
+
+	column surface_m2
+		dataType: double
+		lineageTag: e8ae1158-c1cb-437e-972a-fde2d1b96999
+		summarizeBy: sum
+		sourceColumn: surface_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nb_pieces
+		dataType: int64
+		formatString: 0
+		lineageTag: 294afe91-465e-485f-b14d-ea5822c38de2
+		summarizeBy: sum
+		sourceColumn: nb_pieces
+
+		annotation SummarizationSetBy = Automatic
+
+	column prix
+		dataType: double
+		lineageTag: b74b8dbf-011c-4108-9a01-b5c1989f0611
+		summarizeBy: sum
+		sourceColumn: prix
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prix_m2
+		dataType: double
+		lineageTag: 5aa36c4c-661d-4815-a254-c0138e9290cb
+		summarizeBy: sum
+		sourceColumn: prix_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column latitude
+		dataType: double
+		lineageTag: dc65eefd-4e8c-46ef-b109-c67853c0dc2e
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: bb8c0501-e0ac-4aa6-b976-2d6c466d11ce
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'open_data_logement fct_ventes' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-spring-fire-am8oqesr-pooler.c-5.us-east-1.aws.neon.tech", "neondb"),
+				    open_data_logement_fct_ventes = Source{[Schema="open_data_logement",Item="fct_ventes"]}[Data]
+				in
+				    open_data_logement_fct_ventes
+
+	annotation PBI_ResultType = Table
+

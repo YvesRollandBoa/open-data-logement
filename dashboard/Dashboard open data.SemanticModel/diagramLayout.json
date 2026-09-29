@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 346.69595422076725,
+        "y": 74.694656803661232
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 402.41132842144032,
+            "y": 60.34578987646303
+          },
+          "nodeIndex": "open_data_logement dim_commune",
+          "nodeLineageTag": "d6256a8c-5689-4a2d-8cbb-ffdd4bce7614",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 373.95044351158265,
+            "y": 630.34584078672663
+          },
+          "nodeIndex": "open_data_logement dim_date",
+          "nodeLineageTag": "bc846fa3-7bbe-4fb9-90b1-3d97b010e0a9",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 757.20025400047143,
+            "y": 362.76779421588714
+          },
+          "nodeIndex": "open_data_logement fct_dpe_mensuel",
+          "nodeLineageTag": "b8285bd0-1fea-431f-b029-53b6774b024f",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1.4093331472388968,
+            "y": 285.00656404650596
+          },
+          "nodeIndex": "open_data_logement fct_ventes",
+          "nodeLineageTag": "7895c11f-aab6-4fb7-8bec-9429aaa40d17",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 820.61261707871961,
+            "y": 0
+          },
+          "nodeIndex": "open_data_logement mart_dpe_commune_etiquette",
+          "nodeLineageTag": "e9399c89-b99a-459a-baa1-a334b725ef73",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1084.2680190590277,
+            "y": 14.093331472388911
+          },
+          "nodeIndex": "open_data_logement mart_logement_commune",
+          "nodeLineageTag": "d3963ddd-05da-4308-9aea-3b29c120df00",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1366.8586859117888,
+            "y": 413.17292039336331
+          },
+          "nodeIndex": "_Mesures",
+          "nodeLineageTag": "f5d8264f-b5f4-47d2-aa2c-9cd3b1878577",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Toutes les tables",
+      "zoomValue": 70.955543900969033,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Toutes les tables",
+  "defaultDiagram": "Toutes les tables"
+}

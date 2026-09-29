@@ -1,0 +1,25 @@
+model Model
+	culture: fr-FR
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: fr-FR
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["open_data_logement dim_date","open_data_logement dim_commune","open_data_logement fct_ventes","open_data_logement fct_dpe_mensuel","open_data_logement mart_logement_commune","open_data_logement mart_dpe_commune_etiquette","_Mesures"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'open_data_logement dim_date'
+ref table 'open_data_logement dim_commune'
+ref table 'open_data_logement fct_ventes'
+ref table 'open_data_logement fct_dpe_mensuel'
+ref table 'open_data_logement mart_logement_commune'
+ref table 'open_data_logement mart_dpe_commune_etiquette'
+ref table _Mesures
+
+ref cultureInfo fr-FR
+

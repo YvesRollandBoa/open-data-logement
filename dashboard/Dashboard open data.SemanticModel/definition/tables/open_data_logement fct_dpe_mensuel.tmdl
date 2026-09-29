@@ -1,0 +1,106 @@
+table 'open_data_logement fct_dpe_mensuel'
+	lineageTag: b8285bd0-1fea-431f-b029-53b6774b024f
+
+	column mois
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: e4fe1b86-14ec-43a0-9b0d-1e8ab8fcc296
+		summarizeBy: none
+		sourceColumn: mois
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column code_commune
+		dataType: string
+		isHidden
+		lineageTag: a0257c2e-10d7-4a91-95cb-9098933cc576
+		summarizeBy: none
+		sourceColumn: code_commune
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column type_logement
+		dataType: string
+		lineageTag: f06602cf-7a5e-4c90-9665-a377b0c4decc
+		summarizeBy: none
+		sourceColumn: type_logement
+
+		annotation SummarizationSetBy = Automatic
+
+	column periode_construction
+		dataType: string
+		lineageTag: 52241897-f340-4ef7-9d48-404354f24940
+		summarizeBy: none
+		sourceColumn: periode_construction
+		sortByColumn: periode_construction_tri
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column periode_construction_tri
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: da81a6eb-7354-47c6-8365-be85344c8187
+		summarizeBy: sum
+		sourceColumn: periode_construction_tri
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column etiquette_dpe
+		dataType: string
+		lineageTag: 8c119dd1-6a03-453b-b457-ea568781c8dc
+		summarizeBy: none
+		sourceColumn: etiquette_dpe
+
+		annotation SummarizationSetBy = Automatic
+
+	column est_passoire_thermique
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4cabfaa2-d291-4478-a0b9-b14893aefbac
+		summarizeBy: none
+		sourceColumn: est_passoire_thermique
+
+		annotation SummarizationSetBy = Automatic
+
+	column nb_dpe
+		dataType: int64
+		formatString: 0
+		lineageTag: d983964f-3bd0-4e0a-8470-6c6a217bb996
+		summarizeBy: sum
+		sourceColumn: nb_dpe
+
+		annotation SummarizationSetBy = Automatic
+
+	column surface_totale_m2
+		dataType: double
+		lineageTag: e0c02969-a69c-4008-9ebe-1760f1d7fd54
+		summarizeBy: sum
+		sourceColumn: surface_totale_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'open_data_logement fct_dpe_mensuel' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-spring-fire-am8oqesr-pooler.c-5.us-east-1.aws.neon.tech", "neondb"),
+				    open_data_logement_fct_dpe_mensuel = Source{[Schema="open_data_logement",Item="fct_dpe_mensuel"]}[Data]
+				in
+				    open_data_logement_fct_dpe_mensuel
+
+	annotation PBI_ResultType = Table
+

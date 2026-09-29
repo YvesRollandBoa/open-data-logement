@@ -1,0 +1,290 @@
+table 'open_data_logement mart_logement_commune'
+	lineageTag: d3963ddd-05da-4308-9aea-3b29c120df00
+
+	column code_commune
+		dataType: string
+		isHidden
+		lineageTag: 8c93d4c0-d63e-4f96-921e-d629e28da4c2
+		summarizeBy: none
+		sourceColumn: code_commune
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column nom_commune
+		dataType: string
+		lineageTag: b00b4b46-5067-4a93-8ca4-ee047a601dfa
+		summarizeBy: none
+		sourceColumn: nom_commune
+
+		annotation SummarizationSetBy = Automatic
+
+	column code_departement
+		dataType: string
+		lineageTag: 50246b0b-dcf5-42e5-90de-0d2cb6c599ff
+		summarizeBy: none
+		sourceColumn: code_departement
+
+		annotation SummarizationSetBy = Automatic
+
+	column population
+		dataType: double
+		lineageTag: 344e8c5b-9ba1-4e8b-bdd7-1a200413cfbc
+		summarizeBy: sum
+		sourceColumn: population
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column superficie_km2
+		dataType: double
+		lineageTag: aa81b69d-2654-4afc-bdb5-c475e5b9a56a
+		summarizeBy: sum
+		sourceColumn: superficie_km2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column densite_hab_km2
+		dataType: double
+		lineageTag: 24a5d4ee-d622-42b0-977f-0ea72b7616b3
+		summarizeBy: sum
+		sourceColumn: densite_hab_km2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column niveau_vie_median
+		dataType: double
+		lineageTag: cc32495a-a7a1-4b3d-b471-f6299682c40e
+		summarizeBy: sum
+		sourceColumn: niveau_vie_median
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column niveau_vie_sous_secret
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 13596627-21b6-4b7e-a8e7-5f8bbf71cc36
+		summarizeBy: none
+		sourceColumn: niveau_vie_sous_secret
+
+		annotation SummarizationSetBy = Automatic
+
+	column taux_pauvrete
+		dataType: double
+		lineageTag: 50ac3476-52a9-4e13-8588-980c6fb9b95c
+		summarizeBy: sum
+		sourceColumn: taux_pauvrete
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nb_logements
+		dataType: double
+		lineageTag: 429c2f98-f513-4b25-89d0-3d3d7c7d1348
+		summarizeBy: sum
+		sourceColumn: nb_logements
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column part_logements_vacants
+		dataType: double
+		lineageTag: 4f6fedf7-e2ea-41f9-9cce-1b1a79564bb4
+		summarizeBy: sum
+		sourceColumn: part_logements_vacants
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column part_residences_secondaires
+		dataType: double
+		lineageTag: badf957f-006b-4dc8-949b-66aff811603d
+		summarizeBy: sum
+		sourceColumn: part_residences_secondaires
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column part_proprietaires
+		dataType: double
+		lineageTag: d29cbfa6-dad6-4faf-822b-487e70bc18cb
+		summarizeBy: sum
+		sourceColumn: part_proprietaires
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nb_ventes
+		dataType: int64
+		formatString: 0
+		lineageTag: a19319b0-0f15-4f37-bb4f-d55089843e79
+		summarizeBy: sum
+		sourceColumn: nb_ventes
+
+		annotation SummarizationSetBy = Automatic
+
+	column nb_ventes_appartement
+		dataType: int64
+		formatString: 0
+		lineageTag: 774c9461-a143-480f-aa38-250a3b98cc01
+		summarizeBy: sum
+		sourceColumn: nb_ventes_appartement
+
+		annotation SummarizationSetBy = Automatic
+
+	column nb_ventes_maison
+		dataType: int64
+		formatString: 0
+		lineageTag: b4cddcdc-5ee5-406e-aee3-1a48deac8b3a
+		summarizeBy: sum
+		sourceColumn: nb_ventes_maison
+
+		annotation SummarizationSetBy = Automatic
+
+	column prix_m2_median_appartement
+		dataType: double
+		lineageTag: d012fe6e-6d1d-4dab-983b-a33125013e2e
+		summarizeBy: sum
+		sourceColumn: prix_m2_median_appartement
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prix_m2_median_maison
+		dataType: double
+		lineageTag: d873172f-3ced-4cb6-bb83-8a2a4335fc09
+		summarizeBy: sum
+		sourceColumn: prix_m2_median_maison
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prix_median_logement
+		dataType: double
+		lineageTag: 75701516-b9ce-40bc-bfae-f9f040842d25
+		summarizeBy: sum
+		sourceColumn: prix_median_logement
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column surface_mediane_vendue
+		dataType: double
+		lineageTag: 7ed96aa9-d22f-4fde-a5aa-9b897015e355
+		summarizeBy: sum
+		sourceColumn: surface_mediane_vendue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prix_est_fiable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: bdc99c08-5bcf-48ad-b29e-02375858f682
+		summarizeBy: none
+		sourceColumn: prix_est_fiable
+
+		annotation SummarizationSetBy = Automatic
+
+	column annees_niveau_vie_pour_acheter
+		dataType: double
+		lineageTag: 7f2b8ec7-6cbe-491b-9384-05f70496fdd3
+		summarizeBy: sum
+		sourceColumn: annees_niveau_vie_pour_acheter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nb_logements_diagnostiques
+		dataType: int64
+		formatString: 0
+		lineageTag: e5371092-9fea-44b0-be60-431047e5e4ab
+		summarizeBy: sum
+		sourceColumn: nb_logements_diagnostiques
+
+		annotation SummarizationSetBy = Automatic
+
+	column part_passoires_thermiques
+		dataType: double
+		lineageTag: 38734bd4-a466-42ba-89a5-50dcb8d99f8c
+		summarizeBy: sum
+		sourceColumn: part_passoires_thermiques
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column part_logements_performants
+		dataType: double
+		lineageTag: 97698d25-fc92-4dbd-b204-0767096bda49
+		summarizeBy: sum
+		sourceColumn: part_logements_performants
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column conso_energie_mediane_m2
+		dataType: double
+		lineageTag: a29aaede-efe8-4823-8731-50f4b0453544
+		summarizeBy: sum
+		sourceColumn: conso_energie_mediane_m2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column etiquette_dpe_la_plus_frequente
+		dataType: string
+		lineageTag: d15ba0cc-ea96-4171-9b6f-234dbc235a36
+		summarizeBy: none
+		sourceColumn: etiquette_dpe_la_plus_frequente
+
+		annotation SummarizationSetBy = Automatic
+
+	column dpe_est_fiable
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 617e15d0-d0fc-407b-9d9f-e923ae3e0de5
+		summarizeBy: none
+		sourceColumn: dpe_est_fiable
+
+		annotation SummarizationSetBy = Automatic
+
+	column periode_dvf
+		dataType: string
+		lineageTag: f1ccfed2-772b-4ab5-b95a-72783ef851f4
+		summarizeBy: none
+		sourceColumn: periode_dvf
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'open_data_logement mart_logement_commune' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("ep-spring-fire-am8oqesr-pooler.c-5.us-east-1.aws.neon.tech", "neondb"),
+				    open_data_logement_mart_logement_commune = Source{[Schema="open_data_logement",Item="mart_logement_commune"]}[Data]
+				in
+				    open_data_logement_mart_logement_commune
+
+	annotation PBI_ResultType = Table
+
