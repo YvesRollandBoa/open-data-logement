@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "910c55007b07e700cabd",
+  "name": "76b9215aa1c04decc431",
   "position": {
-    "x": 355.25987525987523,
+    "x": 1234.4401899028765,
     "y": 115,
-    "z": 0,
-    "height": 79.833679833679824,
-    "width": 862.20374220374208,
-    "tabOrder": 0
+    "z": 1000,
+    "height": 78.328358208955223,
+    "width": 447.04477611940297,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,16 +20,16 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "open_data_logement dim_commune"
+                      "Entity": "open_data_logement fct_ventes"
                     }
                   },
-                  "Property": "nom_departement"
+                  "Property": "type_logement"
                 }
               },
-              "queryRef": "open_data_logement dim_commune.nom_departement",
-              "nativeQueryRef": "DEPARTEMENT",
+              "queryRef": "open_data_logement fct_ventes.type_logement",
+              "nativeQueryRef": "TYPE DE LOGEMENT",
               "active": true,
-              "displayName": "DEPARTEMENT"
+              "displayName": "TYPE DE LOGEMENT"
             }
           ]
         }
@@ -72,13 +72,6 @@
                 }
               }
             },
-            "singleSelect": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
             "strictSingleSelect": {
               "expr": {
                 "Literal": {
@@ -91,7 +84,7 @@
       ]
     },
     "syncGroup": {
-      "groupName": "nom_departement",
+      "groupName": "type_logement",
       "fieldChanges": true,
       "filterChanges": true
     },

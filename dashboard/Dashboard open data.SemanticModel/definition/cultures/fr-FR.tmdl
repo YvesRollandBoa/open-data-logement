@@ -760,6 +760,16 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.9
 			          }
+			        },
+			        {
+			          "Département": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4210,6 +4220,16 @@ cultureInfo fr-FR
 			          "nb ventes": {
 			            "State": "Generated"
 			          }
+			        },
+			        {
+			          "Ventes": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ]
 			    },
@@ -4768,6 +4788,148 @@ cultureInfo fr-FR
 			          }
 			        }
 			      ]
+			    },
+			    "entity__mesure.titre_ventes_par_mois": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Titre ventes par mois"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "titre ventes par mois": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.soustitre_ventes_par_mois": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Sous-titre ventes par mois"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "sous-titre ventes par mois": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "sous titre ventes par mois": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.libellé_évol__ventes_vs_N1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Libellé évol. ventes vs N-1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "libellé évol. ventes vs N-1": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.prix_m_médian_20212022": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Prix m² médian 2021-2022"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "prix m² médian 2021-2022": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "prix m² médian 2021 2022": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.prix_m_médian_20242025": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Prix m² médian 2024-2025"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "prix m² médian 2024-2025": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "prix m² médian 2024 2025": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.évol__prix_m_202122__202425": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Évol. prix m² 2021-22 → 2024-25"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "évol. prix m² 2021-22 → 2024-25": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "évol. prix m² 2021 22 → 2024 25": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.prix_m_médian_30_ventes_ou_plus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Prix m² médian (30 ventes ou plus)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "prix m² médian (30 ventes ou plus)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "prix m² médian": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -4952,6 +5114,303 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "open_data_logement_dim_communes_have_open_data_logement_fct_ventes"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_prix_m_médian_30_ventes_ou_plus": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.prix_m_médian_30_ventes_ou_plus": {
+			          "Target": {
+			            "Entity": "entity__mesure.prix_m_médian_30_ventes_ou_plus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.prix_m_médian_30_ventes_ou_plus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_prix_m_médian_30_ventes_ou_plus"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_évol__prix_m_202122__202425": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.évol__prix_m_202122__202425": {
+			          "Target": {
+			            "Entity": "entity__mesure.évol__prix_m_202122__202425"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.évol__prix_m_202122__202425"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_évol__prix_m_202122__202425"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_prix_m_médian_20242025": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.prix_m_médian_20242025": {
+			          "Target": {
+			            "Entity": "entity__mesure.prix_m_médian_20242025"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.prix_m_médian_20242025"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_prix_m_médian_20242025"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_prix_m_médian_20212022": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.prix_m_médian_20212022": {
+			          "Target": {
+			            "Entity": "entity__mesure.prix_m_médian_20212022"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.prix_m_médian_20212022"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_prix_m_médian_20212022"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_libellé_évol__ventes_vs_N1": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.libellé_évol__ventes_vs_N1": {
+			          "Target": {
+			            "Entity": "entity__mesure.libellé_évol__ventes_vs_N1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.libellé_évol__ventes_vs_N1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_libellé_évol__ventes_vs_N1"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_date_has_entity__mesure_libellé_évol__ventes_vs_N1": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_date": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_date"
+			          }
+			        },
+			        "entity__mesure.libellé_évol__ventes_vs_N1": {
+			          "Target": {
+			            "Entity": "entity__mesure.libellé_évol__ventes_vs_N1"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.libellé_évol__ventes_vs_N1"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_dates_have_libellé_évol__ventes_vs_N1"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_soustitre_ventes_par_mois": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.soustitre_ventes_par_mois": {
+			          "Target": {
+			            "Entity": "entity__mesure.soustitre_ventes_par_mois"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.soustitre_ventes_par_mois"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_soustitre_ventes_par_mois"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_date_has_entity__mesure_soustitre_ventes_par_mois": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_date": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_date"
+			          }
+			        },
+			        "entity__mesure.soustitre_ventes_par_mois": {
+			          "Target": {
+			            "Entity": "entity__mesure.soustitre_ventes_par_mois"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.soustitre_ventes_par_mois"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_dates_have_soustitre_ventes_par_mois"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_date_has_entity__mesure_titre_ventes_par_mois": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_date"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_date": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_date"
+			          }
+			        },
+			        "entity__mesure.titre_ventes_par_mois": {
+			          "Target": {
+			            "Entity": "entity__mesure.titre_ventes_par_mois"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.titre_ventes_par_mois"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_dates_have_titre_ventes_par_mois"
 			        }
 			      ]
 			    },

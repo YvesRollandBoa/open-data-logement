@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "7c71a2ec25d965b1671b",
+  "name": "6b6a9d9c829c839a480d",
   "position": {
-    "x": 1589.025270758123,
-    "y": 220,
-    "z": 5000,
+    "x": 785.995481735554,
+    "y": 265.12635379061373,
+    "z": 3000,
     "height": 131.6967509025271,
-    "width": 280.72202166064983,
-    "tabOrder": 5000
+    "width": 310.18050541516249,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,32 +23,17 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Part passoires thermiques"
+                  "Property": "Nb ventes (carte)"
                 }
               },
-              "queryRef": "_Mesures.Part passoires thermiques",
-              "nativeQueryRef": "Passoires (F-G) parmi les DPE",
-              "displayName": "Passoires (F-G) parmi les DPE"
+              "queryRef": "_Mesures.Nb ventes (carte)",
+              "nativeQueryRef": "Ventes de logements",
+              "displayName": "Ventes de logements"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Mesures"
-                  }
-                },
-                "Property": "Part passoires thermiques"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -64,7 +49,7 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Libellé écart passoires"
+                  "Property": "Libellé évol. ventes"
                 }
               }
             }
@@ -77,8 +62,8 @@
                 }
               }
             ],
-            "metadata": "_Mesures.Part passoires thermiques",
-            "id": "field-78a4549f-1c37-70db-2283-4681e53e7253",
+            "metadata": "_Mesures.Nb ventes (carte)",
+            "id": "field-966c40b9-88ab-5525-3333-e87b45cb4fb8",
             "order": 0
           }
         }
@@ -95,7 +80,7 @@
             }
           },
           "selector": {
-            "metadata": "_Mesures.Part passoires thermiques"
+            "metadata": "_Mesures.Nb ventes (carte)"
           }
         }
       ],
@@ -112,7 +97,7 @@
                           "Entity": "_Mesures"
                         }
                       },
-                      "Property": "Couleur écart passoires"
+                      "Property": "Couleur évol. ventes"
                     }
                   }
                 }
@@ -127,7 +112,7 @@
                 }
               }
             ],
-            "metadata": "_Mesures.Part passoires thermiques"
+            "metadata": "_Mesures.Nb ventes (carte)"
           }
         }
       ],
@@ -160,7 +145,7 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Titre carte passoires"
+                  "Property": "Titre carte ventes"
                 }
               }
             },

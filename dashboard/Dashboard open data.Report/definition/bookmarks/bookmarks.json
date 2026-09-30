@@ -1,0 +1,15 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "c932250464684861433c",
+      "displayName": "Tri communes",
+      "children": [
+        "df8aaa7d6e5d05c012d1",
+        "326e346e00e377c7e751",
+        "2bcc7c159740dbe3a475",
+        "da4fd7fb6e9425191845"
+      ]
+    }
+  ]
+}

@@ -3,8 +3,8 @@
   "name": "09233500d6c43b138369",
   "position": {
     "x": 1234.4401899028765,
-    "y": 153.67983367983368,
-    "z": 2000,
+    "y": 115,
+    "z": 1000,
     "height": 78.328358208955223,
     "width": 447.04477611940297,
     "tabOrder": 1000
@@ -82,6 +82,11 @@
           }
         }
       ]
+    },
+    "syncGroup": {
+      "groupName": "type_logement",
+      "fieldChanges": true,
+      "filterChanges": true
     },
     "drillFilterOtherVisuals": true
   }

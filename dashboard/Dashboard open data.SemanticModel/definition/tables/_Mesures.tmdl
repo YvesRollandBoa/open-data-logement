@@ -286,6 +286,66 @@ table _Mesures
 		displayFolder: 9. Mise en forme\Titres
 		lineageTag: dcf36c62-831e-4b62-9d69-00459a49ea95
 
+	measure 'Libellé évol. ventes vs N-1' =
+			
+			VAR e = [Évol. ventes vs N-1]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( e ),
+			        IF ( e >= 0, "▲ ", "▼ " ) & FORMAT ( e, "+0.0 %;-0.0 %" )
+			    )
+		displayFolder: 9. Mise en forme
+		lineageTag: 593f6b5b-b39c-4008-9fed-5a50f5941651
+
+	measure 'Prix m² médian 2021-2022' =
+			
+			CALCULATE ( [Prix m² médian], 'open_data_logement dim_date'[annee] IN { 2021, 2022 } )
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: c8e0ea9a-46cb-4265-9e6b-72c3a42cc416
+
+	measure 'Prix m² médian 2024-2025' =
+			
+			CALCULATE ( [Prix m² médian], 'open_data_logement dim_date'[annee] IN { 2024, 2025 } )
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: ad36d4bb-1514-41e3-8275-ad7b2d2a5d6c
+
+	measure 'Évol. prix m² 2021-22 → 2024-25' =
+			
+			DIVIDE ( [Prix m² médian 2024-2025] - [Prix m² médian 2021-2022], [Prix m² médian 2021-2022] )
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: f4760e45-eef3-4622-b308-30370425847f
+
+	measure 'Prix m² médian (30 ventes ou plus)' =
+			
+			IF ( [Nb ventes] >= 30, [Prix m² médian] )
+		displayFolder: 1. Marché
+		lineageTag: 23ff6918-43a3-41b6-b949-aead028a2f9c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Évol. prix m² (30 ventes ou plus)' =
+			
+			VAR nDebut =
+			    CALCULATE ( [Nb ventes], 'open_data_logement dim_date'[annee] IN { 2021, 2022 } )
+			VAR nFin =
+			    CALCULATE ( [Nb ventes], 'open_data_logement dim_date'[annee] IN { 2024, 2025 } )
+			RETURN
+			    IF ( nDebut >= 30 && nFin >= 30, [Évol. prix m² 2021-22 → 2024-25] )
+		displayFolder: 1. Marché\Comparaison N-1
+		lineageTag: 796f98b5-331e-4777-a385-227847af64fe
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Nb ventes (30 ventes ou plus)' =
+			
+			IF ( [Nb ventes] >= 30, [Nb ventes] )
+		formatString: 0
+		displayFolder: 1. Marché
+		lineageTag: e691d768-b352-4256-8df0-2cd08efc9626
+
 	partition _Mesures = m
 		mode: import
 		source =

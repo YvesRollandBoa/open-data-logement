@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "7c71a2ec25d965b1671b",
+  "name": "b1e2e70a0936a420732b",
   "position": {
-    "x": 1589.025270758123,
-    "y": 220,
-    "z": 5000,
+    "x": 1173.6475603623619,
+    "y": 265.12635379061373,
+    "z": 4000,
     "height": 131.6967509025271,
-    "width": 280.72202166064983,
-    "tabOrder": 5000
+    "width": 337.90613718411555,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,37 +23,49 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Part passoires thermiques"
+                  "Property": "Prix médian (carte)"
                 }
               },
-              "queryRef": "_Mesures.Part passoires thermiques",
-              "nativeQueryRef": "Passoires (F-G) parmi les DPE",
-              "displayName": "Passoires (F-G) parmi les DPE"
+              "queryRef": "_Mesures.Prix médian (carte)",
+              "nativeQueryRef": "Prix médian d'un logement ",
+              "displayName": "Prix médian d'un logement "
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Mesures"
-                  }
-                },
-                "Property": "Part passoires thermiques"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {
       "referenceLabel": [
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "_Mesures.Prix médian (carte)",
+            "id": "field-410e29c0-72a8-0d8e-09fd-0524543f72b1",
+            "order": 0
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "_Mesures.Prix médian (carte)",
+            "id": "field-cf648077-eecb-baf9-9c38-00df5d1b4f98",
+            "order": 1
+          }
+        },
         {
           "properties": {
             "value": {
@@ -64,7 +76,7 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Libellé écart passoires"
+                  "Property": "Libellé évol. prix médian"
                 }
               }
             }
@@ -77,8 +89,8 @@
                 }
               }
             ],
-            "metadata": "_Mesures.Part passoires thermiques",
-            "id": "field-78a4549f-1c37-70db-2283-4681e53e7253",
+            "metadata": "_Mesures.Prix médian (carte)",
+            "id": "field-d1d317f4-5b4a-1db4-5363-6fbcf24f400a",
             "order": 0
           }
         }
@@ -95,7 +107,7 @@
             }
           },
           "selector": {
-            "metadata": "_Mesures.Part passoires thermiques"
+            "metadata": "_Mesures.Prix médian (carte)"
           }
         }
       ],
@@ -112,7 +124,7 @@
                           "Entity": "_Mesures"
                         }
                       },
-                      "Property": "Couleur écart passoires"
+                      "Property": "Couleur évol. prix médian"
                     }
                   }
                 }
@@ -127,7 +139,7 @@
                 }
               }
             ],
-            "metadata": "_Mesures.Part passoires thermiques"
+            "metadata": "_Mesures.Prix médian (carte)"
           }
         }
       ],
@@ -160,7 +172,7 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Titre carte passoires"
+                  "Property": "Titre carte prix médian"
                 }
               }
             },

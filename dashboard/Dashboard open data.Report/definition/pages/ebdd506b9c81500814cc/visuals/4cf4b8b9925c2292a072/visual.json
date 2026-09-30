@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "7c71a2ec25d965b1671b",
+  "name": "4cf4b8b9925c2292a072",
   "position": {
-    "x": 1589.025270758123,
-    "y": 220,
-    "z": 5000,
-    "height": 131.6967509025271,
-    "width": 280.72202166064983,
-    "tabOrder": 5000
+    "x": 355.25987525987523,
+    "y": 265.44698544698542,
+    "z": 2000,
+    "height": 131.72557172557171,
+    "width": 353.26403326403323,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,36 +23,33 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Part passoires thermiques"
+                  "Property": "Prix m² médian (carte)"
                 }
               },
-              "queryRef": "_Mesures.Part passoires thermiques",
-              "nativeQueryRef": "Passoires (F-G) parmi les DPE",
-              "displayName": "Passoires (F-G) parmi les DPE"
+              "queryRef": "_Mesures.Prix m² médian (carte)",
+              "nativeQueryRef": "Prix m² médian (carte)1"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Mesures"
-                  }
-                },
-                "Property": "Part passoires thermiques"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
     "objects": {
+      "value": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
       "referenceLabel": [
         {
           "properties": {
@@ -64,7 +61,7 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Libellé écart passoires"
+                  "Property": "Libellé évol. prix m²"
                 }
               }
             }
@@ -77,8 +74,8 @@
                 }
               }
             ],
-            "metadata": "_Mesures.Part passoires thermiques",
-            "id": "field-78a4549f-1c37-70db-2283-4681e53e7253",
+            "metadata": "_Mesures.Prix m² médian (carte)",
+            "id": "field-8c0cd071-4ec9-b12f-3546-98e57a493b9b",
             "order": 0
           }
         }
@@ -95,7 +92,7 @@
             }
           },
           "selector": {
-            "metadata": "_Mesures.Part passoires thermiques"
+            "metadata": "_Mesures.Prix m² médian (carte)"
           }
         }
       ],
@@ -112,7 +109,7 @@
                           "Entity": "_Mesures"
                         }
                       },
-                      "Property": "Couleur écart passoires"
+                      "Property": "Couleur évol. prix m²"
                     }
                   }
                 }
@@ -127,7 +124,7 @@
                 }
               }
             ],
-            "metadata": "_Mesures.Part passoires thermiques"
+            "metadata": "_Mesures.Prix m² médian (carte)"
           }
         }
       ],
@@ -160,7 +157,7 @@
                       "Entity": "_Mesures"
                     }
                   },
-                  "Property": "Titre carte passoires"
+                  "Property": "Titre carte prix m²"
                 }
               }
             },
@@ -168,6 +165,32 @@
               "expr": {
                 "Literal": {
                   "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
