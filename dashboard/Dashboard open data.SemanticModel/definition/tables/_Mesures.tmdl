@@ -346,6 +346,110 @@ table _Mesures
 		displayFolder: 1. Marché
 		lineageTag: e691d768-b352-4256-8df0-2cd08efc9626
 
+	measure 'Niveau de vie médian' =
+			
+			SELECTEDVALUE ( 'open_data_logement dim_commune'[niveau_vie_median] )
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		displayFolder: 3. Accessibilité
+		lineageTag: 365a6f29-2b1f-48cc-bffb-33bb90e823e0
+
+	measure 'Années de niveau de vie pour acheter' =
+			
+			DIVIDE ( [Prix médian], [Niveau de vie médian] )
+		formatString: 0.0
+		displayFolder: 3. Accessibilité
+		lineageTag: f08b7f1c-98cd-44c0-9356-50d66bd56a87
+
+	measure 'Couleur accessibilité' =
+			
+			VAR a = [Années de niveau de vie pour acheter]
+			RETURN
+			    SWITCH ( TRUE (), a >= 8, "#B3261E", a >= 6, "#E58606", "#1D7A3A" )
+		displayFolder: 9. Mise en forme
+		lineageTag: 7e2b58af-a9a3-4424-8981-5860f5025e5d
+
+	measure 'Années pour acheter · commune médiane' =
+			
+			MEDIANX (
+			    FILTER ( VALUES ( 'open_data_logement dim_commune'[code_commune] ), [Nb ventes] >= 10 ),
+			    [Années de niveau de vie pour acheter]
+			)
+		formatString: 0.0
+		displayFolder: 3. Accessibilité
+		lineageTag: 4786f927-29b9-401e-bc79-63b0950f11e6
+
+	measure 'Communes à 8 ans ou plus' =
+			
+			COUNTROWS (
+			    FILTER (
+			        VALUES ( 'open_data_logement dim_commune'[code_commune] ),
+			        [Nb ventes] >= 10 && [Années de niveau de vie pour acheter] >= 8
+			    )
+			)
+		formatString: 0
+		displayFolder: 3. Accessibilité
+		lineageTag: 6508f5f9-5de7-43e1-8798-929c02a4f0a1
+
+	measure 'Niveau de vie · commune médiane' =
+			
+			MEDIANX (
+			    FILTER ( VALUES ( 'open_data_logement dim_commune'[code_commune] ), [Nb ventes] >= 10 ),
+			    [Niveau de vie médian]
+			)
+		formatString: #,0\ "€";-#,0\ "€";#,0\ "€"
+		displayFolder: 3. Accessibilité
+		lineageTag: 8e36f78c-84bb-4b8a-9605-8e82d14558df
+
+	measure 'Niveau de vie médian (carte)' =
+			
+			IF (
+			    NOT ISBLANK ( [Niveau de vie · commune médiane] ),
+			    FORMAT ( [Niveau de vie · commune médiane], "#,0 €/an" )
+			)
+		displayFolder: 9. Mise en forme\Cartes
+		lineageTag: a637b443-fbe6-4a3c-9472-cb27caa18008
+
+	measure 'Nb communes retenues' =
+			
+			COUNTROWS (
+			    FILTER ( VALUES ( 'open_data_logement dim_commune'[code_commune] ), [Nb ventes] >= 10 )
+			)
+		formatString: 0
+		displayFolder: 3. Accessibilité
+		lineageTag: eaf2bfa6-6126-4621-ba0b-a9457c28b5c4
+
+	measure 'Part communes à 8 ans ou plus' =
+			
+			DIVIDE ( [Communes à 8 ans ou plus], [Nb communes retenues] )
+		displayFolder: 3. Accessibilité
+		lineageTag: 0157a961-9247-4211-bc14-113d414f4cf6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Libellé communes retenues' =
+			
+			SUBSTITUTE ( FORMAT ( [Nb communes retenues], "#,##0" ), ",", " " ) & " communes · 2024-2025"
+		displayFolder: 9. Mise en forme
+		lineageTag: 3b76eab3-1128-43f8-b945-f7eea7e5713d
+
+	measure 'Libellé part communes 8 ans' =
+			
+			FORMAT ( [Part communes à 8 ans ou plus], "0 %" ) & " des communes"
+		displayFolder: 9. Mise en forme
+		lineageTag: 8df58487-91d7-40d0-957d-728047a02a6a
+
+	measure 'Libellé source INSEE' = "INSEE, revenus 2023"
+		displayFolder: 9. Mise en forme
+		lineageTag: 470fd8eb-f532-4b8a-aa4a-4e0632fa7e66
+
+	measure 'Années pour acheter (30 ventes ou plus)' =
+			
+			IF ( [Nb ventes] >= 30, [Années de niveau de vie pour acheter] )
+		displayFolder: 3. Accessibilité
+		lineageTag: c93510fa-ae3e-4d7b-ae38-6b21937122bd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Mesures = m
 		mode: import
 		source =

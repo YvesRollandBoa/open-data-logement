@@ -1,15 +1,8 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "ebdd506b9c81500814cc",
+  "name": "c473280a67581529003c",
   "displayName": "Accessibilité",
   "displayOption": "FitToPage",
   "height": 1080,
-  "width": 1920,
-  "visualInteractions": [
-    {
-      "source": "4ca6564e15d6e140e8a3",
-      "target": "23417d80b5bb799b1ba3",
-      "type": "NoFilter"
-    }
-  ]
+  "width": 1920
 }

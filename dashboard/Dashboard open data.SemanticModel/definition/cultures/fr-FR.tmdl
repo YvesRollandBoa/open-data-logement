@@ -4930,6 +4930,290 @@ cultureInfo fr-FR
 			          }
 			        }
 			      ]
+			    },
+			    "entity__mesure.évol__prix_m_30_ventes_ou_plus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Évol. prix m² (30 ventes ou plus)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "évol. prix m² (30 ventes ou plus)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "évol. prix m²": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_ventes_30_ventes_ou_plus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb ventes (30 ventes ou plus)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb ventes (30 ventes ou plus)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "nb ventes": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.niveau_de_vie_médian": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Niveau de vie médian"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "niveau de vie médian": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.années_de_niveau_de_vie_pour_acheter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Années de niveau de vie pour acheter"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "années de niveau de vie pour acheter": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Années": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.couleur_accessibilité": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Couleur accessibilité"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "couleur accessibilité": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.années_pour_acheter__commune_médiane": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Années pour acheter · commune médiane"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "années pour acheter · commune médiane": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Années de niveau de vie pour acheter": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.communes_à_8_ans_ou_plus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Communes à 8 ans ou plus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "communes à 8 ans ou plus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.niveau_de_vie__commune_médiane": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Niveau de vie · commune médiane"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "niveau de vie · commune médiane": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.niveau_de_vie_médian_carte": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Niveau de vie médian (carte)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "niveau de vie médian (carte)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "niveau de vie médian": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.nb_communes_retenues": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Nb communes retenues"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nb communes retenues": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.part_communes_à_8_ans_ou_plus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Part communes à 8 ans ou plus"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "part communes à 8 ans ou plus": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.libellé_communes_retenues": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Libellé communes retenues"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "libellé communes retenues": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.libellé_part_communes_8_ans": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Libellé part communes 8 ans"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "libellé part communes 8 ans": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.libellé_source_INSEE": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Libellé source INSEE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "libellé source INSEE": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "entity__mesure.années_pour_acheter_30_ventes_ou_plus": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Mesures",
+			          "ConceptualProperty": "Années pour acheter (30 ventes ou plus)"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "années pour acheter (30 ventes ou plus)": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "années pour acheter": {
+			            "State": "Generated",
+			            "Weight": 0.75
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
@@ -5114,6 +5398,633 @@ cultureInfo fr-FR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "open_data_logement_dim_communes_have_open_data_logement_fct_ventes"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_années_pour_acheter_30_ventes_ou_plus": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.années_pour_acheter_30_ventes_ou_plus": {
+			          "Target": {
+			            "Entity": "entity__mesure.années_pour_acheter_30_ventes_ou_plus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.années_pour_acheter_30_ventes_ou_plus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_années_pour_acheter_30_ventes_ou_plus"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_années_pour_acheter_30_ventes_ou_plus": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.années_pour_acheter_30_ventes_ou_plus": {
+			          "Target": {
+			            "Entity": "entity__mesure.années_pour_acheter_30_ventes_ou_plus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.années_pour_acheter_30_ventes_ou_plus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_années_pour_acheter_30_ventes_ou_plus"
+			        }
+			      ]
+			    },
+			    "entity__mesure_has_libellé_source_INSEE": {
+			      "Binding": {
+			        "ConceptualEntity": "_Mesures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__mesure": {
+			          "Target": {
+			            "Entity": "entity__mesure"
+			          }
+			        },
+			        "entity__mesure.libellé_source_INSEE": {
+			          "Target": {
+			            "Entity": "entity__mesure.libellé_source_INSEE"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__mesure"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.libellé_source_INSEE"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_mesures_have_libellé_source_INSEE"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_libellé_part_communes_8_ans": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.libellé_part_communes_8_ans": {
+			          "Target": {
+			            "Entity": "entity__mesure.libellé_part_communes_8_ans"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.libellé_part_communes_8_ans"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_libellé_part_communes_8_ans"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_libellé_communes_retenues": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.libellé_communes_retenues": {
+			          "Target": {
+			            "Entity": "entity__mesure.libellé_communes_retenues"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.libellé_communes_retenues"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_libellé_communes_retenues"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_part_communes_à_8_ans_ou_plus": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.part_communes_à_8_ans_ou_plus": {
+			          "Target": {
+			            "Entity": "entity__mesure.part_communes_à_8_ans_ou_plus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.part_communes_à_8_ans_ou_plus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_part_communes_à_8_ans_ou_plus"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_nb_communes_retenues": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.nb_communes_retenues": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_communes_retenues"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_communes_retenues"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_nb_communes_retenues"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_niveau_de_vie_médian_carte": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.niveau_de_vie_médian_carte": {
+			          "Target": {
+			            "Entity": "entity__mesure.niveau_de_vie_médian_carte"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.niveau_de_vie_médian_carte"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_niveau_de_vie_médian_carte"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_niveau_de_vie__commune_médiane": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.niveau_de_vie__commune_médiane": {
+			          "Target": {
+			            "Entity": "entity__mesure.niveau_de_vie__commune_médiane"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.niveau_de_vie__commune_médiane"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_niveau_de_vie__commune_médiane"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_communes_à_8_ans_ou_plus": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.communes_à_8_ans_ou_plus": {
+			          "Target": {
+			            "Entity": "entity__mesure.communes_à_8_ans_ou_plus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.communes_à_8_ans_ou_plus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_communes_à_8_ans_ou_plus"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_années_pour_acheter__commune_médiane": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.années_pour_acheter__commune_médiane": {
+			          "Target": {
+			            "Entity": "entity__mesure.années_pour_acheter__commune_médiane"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.années_pour_acheter__commune_médiane"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_années_pour_acheter__commune_médiane"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_années_pour_acheter__commune_médiane": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.années_pour_acheter__commune_médiane": {
+			          "Target": {
+			            "Entity": "entity__mesure.années_pour_acheter__commune_médiane"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.années_pour_acheter__commune_médiane"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_années_pour_acheter__commune_médiane"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_couleur_accessibilité": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.couleur_accessibilité": {
+			          "Target": {
+			            "Entity": "entity__mesure.couleur_accessibilité"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.couleur_accessibilité"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_couleur_accessibilité"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_couleur_accessibilité": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.couleur_accessibilité": {
+			          "Target": {
+			            "Entity": "entity__mesure.couleur_accessibilité"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.couleur_accessibilité"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_couleur_accessibilité"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_années_de_niveau_de_vie_pour_acheter": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.années_de_niveau_de_vie_pour_acheter": {
+			          "Target": {
+			            "Entity": "entity__mesure.années_de_niveau_de_vie_pour_acheter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.années_de_niveau_de_vie_pour_acheter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_années_de_niveau_de_vie_pour_acheter"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_années_de_niveau_de_vie_pour_acheter": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.années_de_niveau_de_vie_pour_acheter": {
+			          "Target": {
+			            "Entity": "entity__mesure.années_de_niveau_de_vie_pour_acheter"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.années_de_niveau_de_vie_pour_acheter"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_années_de_niveau_de_vie_pour_acheter"
+			        }
+			      ]
+			    },
+			    "open_data_logement_dim_commune_has_entity__mesure_niveau_de_vie_médian": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement dim_commune"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_dim_commune": {
+			          "Target": {
+			            "Entity": "open_data_logement_dim_commune"
+			          }
+			        },
+			        "entity__mesure.niveau_de_vie_médian": {
+			          "Target": {
+			            "Entity": "entity__mesure.niveau_de_vie_médian"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_dim_commune"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.niveau_de_vie_médian"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_dim_communes_have_niveau_de_vie_médian"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_nb_ventes_30_ventes_ou_plus": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.nb_ventes_30_ventes_ou_plus": {
+			          "Target": {
+			            "Entity": "entity__mesure.nb_ventes_30_ventes_ou_plus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.nb_ventes_30_ventes_ou_plus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_nb_ventes_30_ventes_ou_plus"
+			        }
+			      ]
+			    },
+			    "open_data_logement_fct_vente_has_entity__mesure_évol__prix_m_30_ventes_ou_plus": {
+			      "Binding": {
+			        "ConceptualEntity": "open_data_logement fct_ventes"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "open_data_logement_fct_vente": {
+			          "Target": {
+			            "Entity": "open_data_logement_fct_vente"
+			          }
+			        },
+			        "entity__mesure.évol__prix_m_30_ventes_ou_plus": {
+			          "Target": {
+			            "Entity": "entity__mesure.évol__prix_m_30_ventes_ou_plus"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "open_data_logement_fct_vente"
+			            },
+			            "Object": {
+			              "Role": "entity__mesure.évol__prix_m_30_ventes_ou_plus"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "open_data_logement_fct_ventes_have_évol__prix_m_30_ventes_ou_plus"
 			        }
 			      ]
 			    },
