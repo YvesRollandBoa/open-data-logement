@@ -30,3 +30,4 @@ __pycache__/
 
 # Documents personnels
 *.pdf
+!docs/rapport-power-bi.pdf
