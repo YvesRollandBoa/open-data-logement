@@ -5,6 +5,34 @@
 Pipeline ELT sur données publiques françaises (DVF, DPE ADEME, INSEE), avec un dashboard Power BI à la fin.
 Projet inspiré du n°12 « ETL Open Data Gouvernement » de [pimp-your-portfolio](https://github.com/gpenessot/pimp-your-portfolio).
 
+## Le rapport
+
+![Vue d'ensemble](docs/images/01-vue-ensemble.png)
+
+Quatre pages, construites sur un modèle en étoile et une centaine de mesures DAX.
+
+| Page | Question | Visuels |
+| --- | --- | --- |
+| Vue d'ensemble | Où en est le marché cette année ? | 4 cartes, carte des communes, ventes mensuelles |
+| Marché immobilier | Comment a-t-il évolué sur cinq ans ? | prix 12 mois glissants, ventes par année, top communes |
+| Accessibilité | Combien d'années de revenu pour acheter ? | nuage de points DVF × INSEE, communes les moins accessibles |
+| Performance énergétique | Dans quel état est le parc ? | étiquettes DPE par âge, part de passoires par mois |
+
+<details>
+<summary>Voir les trois autres pages</summary>
+
+![Marché immobilier](docs/images/02-marche.png)
+
+![Accessibilité](docs/images/03-accessibilite.png)
+
+![Performance énergétique](docs/images/04-energie.png)
+
+</details>
+
+Le rapport complet est aussi disponible en [PDF](docs/rapport-power-bi.pdf).
+Les mesures DAX sont versionnées en TMDL dans
+`dashboard/Dashboard open data.SemanticModel/definition/tables/`.
+
 ## Architecture
 
 ```mermaid
