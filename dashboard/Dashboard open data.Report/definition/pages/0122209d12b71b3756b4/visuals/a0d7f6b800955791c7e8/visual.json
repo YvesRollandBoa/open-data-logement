@@ -502,6 +502,100 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "c69a15fd69b58e1c20e0",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "open_data_logement dim_commune"
+                  }
+                },
+                "Property": "nom_commune"
+              }
+            },
+            "Function": 3
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "905b87b43e28b60d255c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "Prix m² médian"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dc8db3f60705aa87eb00",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "Prix médian"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "34ae1b3c8d349b4d08d9",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "open_data_logement dim_commune"
+                  }
+                },
+                "Property": "population"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8cefc55c070185134eb0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "open_data_logement dim_commune"
+              }
+            },
+            "Property": "longitude"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "433e4a94b218333c81c6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "open_data_logement dim_commune"
+              }
+            },
+            "Property": "latitude"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

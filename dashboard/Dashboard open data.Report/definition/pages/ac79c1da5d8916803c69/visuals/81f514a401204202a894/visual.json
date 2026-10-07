@@ -1,9 +1,9 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "1b686b2d64e830c60a10",
+  "name": "81f514a401204202a894",
   "position": {
     "x": 355.25987525987523,
-    "y": 151.68399168399168,
+    "y": 115,
     "z": 0,
     "height": 79.833679833679824,
     "width": 862.20374220374208,
@@ -96,5 +96,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e3f172676c39aaa7beaf",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "open_data_logement dim_commune"
+              }
+            },
+            "Property": "nom_departement"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

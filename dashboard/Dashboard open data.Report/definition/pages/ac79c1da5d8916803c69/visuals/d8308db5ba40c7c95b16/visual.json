@@ -1,0 +1,473 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "d8308db5ba40c7c95b16",
+  "position": {
+    "x": 354.17475728155341,
+    "y": 461.35922330097088,
+    "z": 3004,
+    "height": 587.18446601941753,
+    "width": 803.88349514563117,
+    "tabOrder": 3004
+  },
+  "visual": {
+    "visualType": "hundredPercentStackedColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "open_data_logement mart_dpe_commune_etiquette"
+                    }
+                  },
+                  "Property": "periode_construction"
+                }
+              },
+              "queryRef": "open_data_logement mart_dpe_commune_etiquette.periode_construction",
+              "nativeQueryRef": "periode_construction",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "open_data_logement mart_dpe_commune_etiquette"
+                    }
+                  },
+                  "Property": "etiquette_dpe"
+                }
+              },
+              "queryRef": "open_data_logement mart_dpe_commune_etiquette.etiquette_dpe",
+              "nativeQueryRef": "etiquette_dpe"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Mesures"
+                    }
+                  },
+                  "Property": "Nb logements (parc)"
+                }
+              },
+              "queryRef": "_Mesures.Nb logements (parc)",
+              "nativeQueryRef": "Nb logements (parc)"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#009C6D'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "open_data_logement mart_dpe_commune_etiquette"
+                          }
+                        },
+                        "Property": "etiquette_dpe"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'A'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#52B153'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "open_data_logement mart_dpe_commune_etiquette"
+                          }
+                        },
+                        "Property": "etiquette_dpe"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'B'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#A0CF67'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "open_data_logement mart_dpe_commune_etiquette"
+                          }
+                        },
+                        "Property": "etiquette_dpe"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'C'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F5E14E'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "open_data_logement mart_dpe_commune_etiquette"
+                          }
+                        },
+                        "Property": "etiquette_dpe"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'D'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F0B01E'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "open_data_logement mart_dpe_commune_etiquette"
+                          }
+                        },
+                        "Property": "etiquette_dpe"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'E'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#E8792B'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "open_data_logement mart_dpe_commune_etiquette"
+                          }
+                        },
+                        "Property": "etiquette_dpe"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'F'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D7221F'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "open_data_logement mart_dpe_commune_etiquette"
+                          }
+                        },
+                        "Property": "etiquette_dpe"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'G'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "legend": [
+        {
+          "properties": {
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Étiquettes DPE selon l''âge du logement'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'parc diagnostiqué depuis juillet 2021 · un logement = son dernier DPE (tous types de logement)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5445ba7ff95764f9999d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "Nb logements (parc)"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bea3aec7667be51c6e6f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "open_data_logement mart_dpe_commune_etiquette"
+              }
+            },
+            "Property": "periode_construction"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "28a38e5861af9bf23ea2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "open_data_logement mart_dpe_commune_etiquette"
+              }
+            },
+            "Property": "etiquette_dpe"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

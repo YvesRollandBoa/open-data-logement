@@ -161,5 +161,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e50598d7b962b37c7f42",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Mesures"
+              }
+            },
+            "Property": "Nb ventes (carte)"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

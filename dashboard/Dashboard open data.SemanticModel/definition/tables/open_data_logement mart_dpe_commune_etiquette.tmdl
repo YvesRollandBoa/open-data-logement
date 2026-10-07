@@ -49,6 +49,9 @@ table 'open_data_logement mart_dpe_commune_etiquette'
 		lineageTag: 8b0064e0-c735-41e2-897f-4a6b5e9668f7
 		summarizeBy: none
 		sourceColumn: periode_construction
+		sortByColumn: periode_construction_tri
+
+		changedProperty = SortByColumn
 
 		annotation SummarizationSetBy = Automatic
 
@@ -66,6 +69,18 @@ table 'open_data_logement mart_dpe_commune_etiquette'
 		lineageTag: 75f21139-914d-476c-9e20-a8c73cfeb0f1
 		summarizeBy: sum
 		sourceColumn: nb_logements
+
+		annotation SummarizationSetBy = Automatic
+
+	column periode_construction_tri
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e23d4d2a-8548-4f96-b832-0e5b12f43983
+		summarizeBy: sum
+		sourceColumn: periode_construction_tri
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

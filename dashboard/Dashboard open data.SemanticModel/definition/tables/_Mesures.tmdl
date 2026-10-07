@@ -450,6 +450,78 @@ table _Mesures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Nb logements (parc)' =
+			
+			SUM ( 'open_data_logement mart_dpe_commune_etiquette'[nb_logements] )
+		formatString: 0
+		displayFolder: 2. Énergie
+		lineageTag: 1e620b3a-8d52-4734-afe1-2eaac046d656
+
+	measure 'Part passoires (parc)' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        [Nb logements (parc)],
+			        'open_data_logement mart_dpe_commune_etiquette'[etiquette_dpe] IN { "F", "G" }
+			    ),
+			    [Nb logements (parc)]
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 2. Énergie
+		lineageTag: 09cdff79-df19-44ce-aa99-844ad11c710c
+
+	measure 'Part logements A-B (parc)' =
+			
+			DIVIDE (
+			    CALCULATE (
+			        [Nb logements (parc)],
+			        'open_data_logement mart_dpe_commune_etiquette'[etiquette_dpe] IN { "A", "B" }
+			    ),
+			    [Nb logements (parc)]
+			)
+		formatString: 0.0\ %;-0.0\ %;0.0\ %
+		displayFolder: 2. Énergie
+		lineageTag: d09c4577-cfc2-417a-ac0a-a7a9592068a8
+
+	measure 'Nb DPE (carte)' =
+			
+			IF ( NOT ISBLANK ( [Nb DPE] ), FORMAT ( [Nb DPE], "#,0" ) )
+		displayFolder: 9. Mise en forme\Cartes
+		lineageTag: e6389f53-c47d-489b-ab20-af973dd395c8
+
+	measure 'Nb DPE N-1' =
+			
+			IF (
+			    NOT ISBLANK ( [Nb DPE] ),
+			    CALCULATE ( [Nb DPE], SAMEPERIODLASTYEAR ( 'open_data_logement dim_date'[date] ) )
+			)
+		formatString: 0
+		displayFolder: 2. Énergie\Comparaison N-1
+		lineageTag: 2c1a027f-d36c-4ade-a1fa-763afe27cb14
+
+	measure 'Évol. DPE vs N-1' =
+			
+			IF (
+			    HASONEVALUE ( 'open_data_logement dim_date'[annee] ),
+			    DIVIDE ( [Nb DPE] - [Nb DPE N-1], [Nb DPE N-1] )
+			)
+		displayFolder: 2. Énergie\Comparaison N-1
+		lineageTag: 4b964871-26a9-4028-8002-33ae0710560c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Libellé évol. DPE' =
+			
+			VAR e = [Évol. DPE vs N-1]
+			RETURN
+			    IF (
+			        NOT ISBLANK ( e ),
+			        IF ( e >= 0, "▲ ", "▼ " ) & FORMAT ( e, "+0.0 %;-0.0 %" ) & " vs "
+			            & ( MAX ( 'open_data_logement dim_date'[annee] ) - 1 )
+			    )
+		displayFolder: 9. Mise en forme
+		lineageTag: 16a42169-0165-45be-b2e5-bb269e177d56
+
 	partition _Mesures = m
 		mode: import
 		source =

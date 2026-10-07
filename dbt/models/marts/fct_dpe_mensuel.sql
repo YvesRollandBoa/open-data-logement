@@ -26,12 +26,7 @@ select
     type_batiment                                                      as type_logement,
     coalesce(periode_construction, 'inconnue')                         as periode_construction,
     -- ordre chronologique des périodes (« Trier par colonne » dans Power BI)
-    case periode_construction
-        when 'avant 1948' then 1  when '1948-1974' then 2  when '1975-1977' then 3
-        when '1978-1982' then 4   when '1983-1988' then 5  when '1989-2000' then 6
-        when '2001-2005' then 7   when '2006-2012' then 8  when '2013-2021' then 9
-        when 'après 2021' then 10 else 99
-    end                                                                as periode_construction_tri,
+        {{ periode_construction_tri("periode_construction") }}              as periode_construction_tri,
     etiquette_dpe,
     etiquette_dpe in ('F', 'G')                                        as est_passoire_thermique,
     count(*)                                                           as nb_dpe,

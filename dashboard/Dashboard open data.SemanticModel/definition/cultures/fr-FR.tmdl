@@ -1833,16 +1833,6 @@ cultureInfo fr-FR
 			            },
 			            "Weight": 0.582
 			          }
-			        },
-			        {
-			          "TYPE DE LOGEMENT": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },

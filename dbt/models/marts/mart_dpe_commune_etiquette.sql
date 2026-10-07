@@ -9,7 +9,8 @@ select
     any_value(code_departement)             as code_departement,
     type_batiment,
     coalesce(periode_construction, 'inconnue') as periode_construction,
+        {{ periode_construction_tri("coalesce(periode_construction, 'inconnue')") }} as periode_construction_tri,
     etiquette_dpe,
     count(*)                                as nb_logements
 from {{ ref('int_dpe_logement_dernier') }}
-group by code_commune, type_batiment, coalesce(periode_construction, 'inconnue'), etiquette_dpe
+group by all 

@@ -20,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "open_data_logement fct_ventes"
+                      "Entity": "open_data_logement mart_dpe_commune_etiquette"
                     }
                   },
-                  "Property": "type_logement"
+                  "Property": "type_batiment"
                 }
               },
-              "queryRef": "open_data_logement fct_ventes.type_logement",
-              "nativeQueryRef": "TYPE DE LOGEMENT",
-              "active": true,
-              "displayName": "TYPE DE LOGEMENT"
+              "queryRef": "open_data_logement mart_dpe_commune_etiquette.type_batiment",
+              "nativeQueryRef": "type_batiment",
+              "active": true
             }
           ]
         }
@@ -89,5 +88,23 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4f60f641a4dce2b5330b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "open_data_logement mart_dpe_commune_etiquette"
+              }
+            },
+            "Property": "type_batiment"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
