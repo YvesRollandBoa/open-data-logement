@@ -146,7 +146,6 @@ Toutes les relations sont en plusieurs-à-un, à sens unique. `dim_date` est mar
 | `mart_dpe_commune_etiquette` | commune × type × période × étiquette | **parc** diagnostiqué (1 logement = son dernier DPE) : étiquettes par âge du bâti |
 | `dim_commune` | 1 commune | attributs INSEE, département (seed `departements`), niveau de vie, coordonnées pour les cartes |
 | `dim_date` | 1 jour (2021 → fin de l'année en cours) | intelligence temporelle, libellés en français |
-| `mart_prix_commune_annee` | commune × année × type | agrégat exposé, non utilisé par les visuels actuels |
 | `mart_prix_commune_annee` | commune × année × type | exportée vers Neon, non chargée dans le modèle Power BI |
 
 Deux points de modélisation portent tout le rapport.
